@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Stack<T>{
-    private List<T> elements = new ArrayList<>();
+    private final List<T> elements = new ArrayList<>();
 
     public void push(T item){
         elements.add(item);
@@ -14,13 +14,13 @@ class Stack<T>{
         if (elements.isEmpty()) {
             throw new RuntimeException("Stack is empty");
         }
-        return elements.remove(elements.size()-1);
+        return elements.removeLast();
     }
     public T peek(){
         if(elements.isEmpty()){
             throw new RuntimeException("Stack is empty");
         }
-        return elements.get(elements.size()-1);
+        return elements.getLast();
     }
     public boolean isEmpty() {
         return elements.isEmpty();
